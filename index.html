@@ -22,7 +22,13 @@
   --footer-bg: #1d1d1f;
   --footer-color: #fff;
 }
-html[data-theme="dark"] {
+html[data-theme="dark"] .promise-inner {
+  border-color: rgba(255,255,255,0.1) !important;
+}
+[data-theme="dark"] .promise-box {
+  border-right-color: rgba(255,255,255,0.1) !important;
+}
+[data-theme="dark"] {
   --black: #f5f5f7;
   --dark: #e0e0e5;
   --mid: #a1a1a6;
@@ -361,13 +367,13 @@ footer .copy { font-size: 0.78rem; color: var(--light); }
 
 <!-- PROMISE -->
 <div class="promise-wrap">
-  <div class="promise-inner" style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#ffffff;">
-    <div class="promise-box reveal" style="padding:1.5rem 1.8rem;text-align:left;border-right:1px solid var(--border);border-radius:0;">
+  <div class="promise-inner" style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--card);">
+    <div class="promise-box reveal" style="padding:1.5rem 1.8rem;text-align:left;border-right:1px solid var(--border);border-radius:0;background:var(--card);">
       <div style="font-size:11px;font-weight:500;color:var(--mid);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem">defileo</div>
       <div class="num" style="font-size:2rem;letter-spacing:-0.03em;line-height:1;margin-bottom:0.3rem">48,000</div>
       <div class="label" data-i18n="pr1">followers built from 0 · 3 years on X</div>
     </div>
-    <div class="promise-box reveal" style="padding:1.5rem 1.8rem;text-align:left;border-right:1px solid var(--border);border-radius:0;">
+    <div class="promise-box reveal" style="padding:1.5rem 1.8rem;text-align:left;border-right:1px solid var(--border);border-radius:0;background:var(--card);">
       <div style="font-size:11px;font-weight:500;color:var(--mid);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem">Noisy</div>
       <div class="num" style="font-size:2rem;letter-spacing:-0.03em;line-height:1;margin-bottom:0.3rem">17,000</div>
       <div class="label" data-i18n="pr2">followers in 2.5 months · from zero</div>
@@ -629,57 +635,13 @@ function toggleProof(id) {
   <div class="milestones-list reveal">
 
     <div class="milestone-row">
-      <div class="ms-num" style="color:var(--blue)">D1-3</div>
-      <div class="ms-content">
-        <div class="ms-header">
-          <div class="ms-title" data-i18n="m1t">Profile live. First post published. Algorithm warming up.</div>
-          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m1tag">Days 1-3</div>
-        </div>
-        <div class="ms-transform" data-i18n="m1tr">A profile that communicates authority before anyone reads a word. First post live. Account warmed up correctly so you never get shadowbanned. Most people spend weeks here. You spend three days.</div>
-      </div>
-    </div>
-
-    <div class="milestone-row">
-      <div class="ms-num" style="color:var(--blue)">W1</div>
-      <div class="ms-content">
-        <div class="ms-header">
-          <div class="ms-title" data-i18n="m2t">You find the narrative. First posts start getting real views.</div>
-          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m2tag">Week 1</div>
-        </div>
-        <div class="ms-transform" data-i18n="m2tr">defileo grew 10,000 followers in one month by finding one narrative before everyone else. Noisy went from 1,400 to 17,000 in 2.5 months the same way. In week one you find yours - and your posts start moving.</div>
-      </div>
-    </div>
-
-    <div class="milestone-row">
-      <div class="ms-num" style="color:var(--blue)">W2</div>
-      <div class="ms-content">
-        <div class="ms-header">
-          <div class="ms-title" data-i18n="m3t">First 500-2,000 followers. Bigger accounts notice you.</div>
-          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m3tag">Week 2</div>
-        </div>
-        <div class="ms-transform" data-i18n="m3tr">Sprytix hit 2,300 followers in 14 days. Noisy had accounts with 70,000+ followers reach out to him first. Community is not networking. It is leverage. And it works fast.</div>
-      </div>
-    </div>
-
-    <div class="milestone-row">
-      <div class="ms-num" style="color:var(--blue)">W2-3</div>
-      <div class="ms-content">
-        <div class="ms-header">
-          <div class="ms-title" data-i18n="m4t">Your article drops. 1,000,000 views is the target.</div>
-          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m4tag">Weeks 2-3</div>
-        </div>
-        <div class="ms-transform" data-i18n="m4tr">leopardracer. 1M+ views per article. Raytar. 39M impressions in two weeks. One article with the right narrative and the right push changes everything. You will write yours and you will know exactly how to make it spread.</div>
-      </div>
-    </div>
-
-    <div class="milestone-row">
       <div class="ms-num" style="color:var(--blue)">M1</div>
       <div class="ms-content">
         <div class="ms-header">
-          <div class="ms-title" data-i18n="m5t">X pays you. Monetization unlocked. First check received.</div>
-          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m5tag">Month 1</div>
+          <div class="ms-title" data-i18n="m1t">Nobody Follows a Stranger. Fix That in 10 Minutes.</div>
+          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m1tag">Module 1</div>
         </div>
-        <div class="ms-transform" data-i18n="m5tr">Sprytix unlocked X monetization in 14 days. leopardracer got it in month one and closed 4 sponsorship deals the same month. The platform starts paying you before your audience is even large.</div>
+        <div class="ms-transform" data-i18n="m1tr">A profile that communicates authority before anyone reads a word. First post live. Account warmed up correctly so you never get shadowbanned. Most people spend weeks here. You spend three days.</div>
       </div>
     </div>
 
@@ -687,8 +649,52 @@ function toggleProof(id) {
       <div class="ms-num" style="color:var(--blue)">M2</div>
       <div class="ms-content">
         <div class="ms-header">
-          <div class="ms-title" data-i18n="m6t">First deal. $1,000+. Course paid back 300%.</div>
-          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m6tag">Month 2</div>
+          <div class="ms-title" data-i18n="m2t">The Trend That Made Me $30K. How to Find the Next One.</div>
+          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m2tag">Module 2</div>
+        </div>
+        <div class="ms-transform" data-i18n="m2tr">defileo grew 10,000 followers in one month by finding one narrative before everyone else. Noisy went from 1,400 to 17,000 in 2.5 months the same way. In week one you find yours - and your posts start moving.</div>
+      </div>
+    </div>
+
+    <div class="milestone-row">
+      <div class="ms-num" style="color:var(--blue)">M3</div>
+      <div class="ms-content">
+        <div class="ms-header">
+          <div class="ms-title" data-i18n="m3t">I Generated 15M Views With One Person. Here Is How.</div>
+          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m3tag">Module 3</div>
+        </div>
+        <div class="ms-transform" data-i18n="m3tr">Sprytix hit 2,300 followers in 14 days. Noisy had accounts with 70,000+ followers reach out to him first. Community is not networking. It is leverage. And it works fast.</div>
+      </div>
+    </div>
+
+    <div class="milestone-row">
+      <div class="ms-num" style="color:var(--blue)">M4</div>
+      <div class="ms-content">
+        <div class="ms-header">
+          <div class="ms-title" data-i18n="m4t">The Exact Post Structure That Prints Views Every Time.</div>
+          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m4tag">Module 4</div>
+        </div>
+        <div class="ms-transform" data-i18n="m4tr">leopardracer. 1M+ views per article. Raytar. 39M impressions in two weeks. One article with the right narrative and the right push changes everything. You will write yours and you will know exactly how to make it spread.</div>
+      </div>
+    </div>
+
+    <div class="milestone-row">
+      <div class="ms-num" style="color:var(--blue)">M5</div>
+      <div class="ms-content">
+        <div class="ms-header">
+          <div class="ms-title" data-i18n="m5t">From 0 to 1,000,000 Views With a Single Post. No Luck Involved.</div>
+          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m5tag">Module 5</div>
+        </div>
+        <div class="ms-transform" data-i18n="m5tr">Sprytix unlocked X monetization in 14 days. leopardracer got it in month one and closed 4 sponsorship deals the same month. The platform starts paying you before your audience is even large.</div>
+      </div>
+    </div>
+
+    <div class="milestone-row">
+      <div class="ms-num" style="color:var(--blue)">M6</div>
+      <div class="ms-content">
+        <div class="ms-header">
+          <div class="ms-title" data-i18n="m6t">500 Followers. First Paycheck. How Fast Can You Get There.</div>
+          <div class="ms-tag" style="background:#e8f0fe;color:#1a56db" data-i18n="m6tag">Module 6</div>
         </div>
         <div class="ms-transform" data-i18n="m6tr">One sponsorship deal at 1,000-2,000 followers = $1,000+. That is a 300%+ return on $299. You will have the DM template, the pricing framework and the exact process to close it.</div>
       </div>
