@@ -62,7 +62,7 @@ nav {
   padding: 0 2.5rem; height: 52px; gap: 1rem;
 }
 .nav-logo { font-size: 1.05rem; font-weight: 600; color: var(--black); letter-spacing: -0.02em; white-space: nowrap; }
-.nav-links { display: flex; gap: 2rem; }
+.nav-links { display: flex; gap: 2rem; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 .nav-links a { font-size: 0.82rem; color: var(--mid); text-decoration: none; transition: color .2s; white-space: nowrap; }
 .nav-links a:hover { color: var(--black); }
 .nav-right { display: flex; align-items: center; gap: 0.6rem; }
@@ -263,6 +263,58 @@ nav {
 .pricing-community .left p:first-child { font-weight: 600; font-size: 0.95rem; }
 .pricing-community .left p:last-child { font-size: 0.85rem; color: var(--mid); margin-top: 0.2rem; }
 .pricing-community .right { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.03em; white-space: nowrap; }
+.pricing-community-row { display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; width:100%; }
+.pricing-community-right { display:flex; align-items:center; gap:1rem; }
+.com-details-btn {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:0.78rem; font-weight:600; color:var(--blue);
+  background:transparent; border:1px solid var(--blue);
+  border-radius:999px; padding:6px 14px; cursor:pointer;
+  transition:all 0.2s;
+}
+.com-details-btn:hover { background:var(--blue); color:#fff; }
+.com-details-btn .com-chev { transition:transform 0.3s ease; display:block; }
+.com-details-btn[aria-expanded="true"] .com-chev { transform:rotate(180deg); }
+.community-panel {
+  overflow:hidden;
+  max-height:0;
+  opacity:0;
+  transition:max-height 0.45s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top:0;
+}
+.community-panel.open { max-height:900px; opacity:1; margin-top:1.25rem; }
+.community-panel-inner {
+  border-top:1px solid var(--border);
+  padding-top:1.25rem;
+}
+.community-panel-lead {
+  font-size:0.95rem; color:var(--dark); line-height:1.55;
+  margin-bottom:1.1rem;
+}
+.community-panel-list {
+  list-style:none; padding:0; margin:0 0 1.4rem 0;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.75rem 1.25rem;
+}
+.community-panel-list li {
+  display:flex; flex-direction:column; gap:2px;
+  padding:0.65rem 0.85rem;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+}
+.community-panel-list li strong { font-size:0.85rem; font-weight:600; color:var(--black); }
+.community-panel-list li span { font-size:0.78rem; color:var(--mid); line-height:1.45; }
+.community-cta {
+  display:inline-flex; align-items:center; justify-content:center;
+  background:var(--blue); color:#fff!important;
+  font-size:0.92rem; font-weight:600;
+  padding:0.85rem 1.6rem; border-radius:999px;
+  text-decoration:none; transition:background 0.2s;
+}
+.community-cta:hover { background:var(--blue-hover); }
+.community-pay-note {
+  margin-top:0.7rem; font-size:0.75rem; color:var(--mid);
+}
 
 /* ── TESTIMONIALS ── */
 .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
@@ -270,7 +322,7 @@ nav {
 .t-stars { font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 1rem; color: var(--black); }
 .t-text { font-size: 0.92rem; color: var(--dark); line-height: 1.7; margin-bottom: 1.5rem; }
 .t-author { display: flex; align-items: center; gap: 10px; }
-.t-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: var(--mid); }
+.t-avatar { width: 36px; height: 36px; min-width: 36px; flex-shrink: 0; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: var(--mid); overflow: hidden; }
 .t-name { font-size: 0.88rem; font-weight: 500; }
 .t-handle { font-size: 0.78rem; color: var(--light); }
 
@@ -520,16 +572,16 @@ footer .copy { font-size: 0.78rem; color: var(--light); }
     <div class="t-card" style="display:flex;flex-direction:column;position:relative;">
       <div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:0.9rem;margin-bottom:1.2rem;">
         <div style="text-align:center;border-right:1px solid var(--border);padding:0 0.5rem;">
-          <div style="font-size:0.9rem;font-weight:600;color:var(--blue)">✓ <span data-i18n="tc3_s1">Monetized</span></div>
-          <div style="font-size:0.65rem;color:var(--mid);margin-top:3px" data-i18n="tc3_s1b">In 1 month</div>
-        </div>
-        <div style="text-align:center;border-right:1px solid var(--border);padding:0 0.5rem;">
           <div style="font-size:1.25rem;font-weight:600;letter-spacing:-0.02em;color:var(--black)">1M+</div>
           <div style="font-size:0.65rem;color:var(--mid);margin-top:3px" data-i18n="tc3_s2">Views/article</div>
         </div>
-        <div style="text-align:center;padding:0 0.5rem;">
+        <div style="text-align:center;border-right:1px solid var(--border);padding:0 0.5rem;">
           <div style="font-size:1.25rem;font-weight:600;letter-spacing:-0.02em;color:var(--black)">4,691</div>
           <div style="font-size:0.65rem;color:var(--mid);margin-top:3px" data-i18n="tc3_s3">Followers</div>
+        </div>
+        <div style="text-align:center;padding:0 0.5rem;">
+          <div style="font-size:0.9rem;font-weight:600;color:var(--blue)">✓ <span data-i18n="tc3_s1">Monetized</span></div>
+          <div style="font-size:0.65rem;color:var(--mid);margin-top:3px" data-i18n="tc3_s1b">In 1 month</div>
         </div>
       </div>
       <p class="t-text" style="flex:1" data-i18n="r3">"Got X monetization in the first month. Started selling ads regularly - 4 sponsorship deals closed. Articles hitting 1M+ views. Growing every single day."</p>
@@ -769,12 +821,40 @@ function toggleProof(id) {
   </div>
 
   <!-- COMMUNITY ONLY -->
-  <div class="pricing-community reveal">
-    <div class="left">
-      <p data-i18n="com_t">Community only</p>
-      <p data-i18n="com_d">Already know the strategy? Join the network, trends and mutual support system.</p>
+  <div class="pricing-community reveal" style="flex-direction:column;align-items:stretch;">
+    <div class="pricing-community-row">
+      <div class="left">
+        <p data-i18n="com_t">Community only</p>
+        <p data-i18n="com_d">Already know the strategy? Join the network, trends and mutual support system.</p>
+      </div>
+      <div class="pricing-community-right">
+        <button class="com-details-btn" onclick="toggleCommunityPanel()" aria-expanded="false">
+          <span data-i18n="com_details">Details</span>
+          <svg class="com-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="right">$50<span style="font-size:1rem;font-weight:400;color:var(--mid)" data-i18n="com_mo">/mo</span></div>
+      </div>
     </div>
-    <div class="right">$50<span style="font-size:1rem;font-weight:400;color:var(--mid)" data-i18n="com_mo">/mo</span></div>
+
+    <div id="communityPanel" class="community-panel">
+      <div class="community-panel-inner">
+        <p class="community-panel-lead" data-i18n="com_lead">
+          The community is 90% of success on X. Strategy without a network plateaus fast — inside, growth compounds.
+        </p>
+        <ul class="community-panel-list">
+          <li><strong data-i18n="com_b1t">Sponsorship offers</strong><span data-i18n="com_b1d">Direct intros to brands & projects looking for creators.</span></li>
+          <li><strong data-i18n="com_b2t">Alpha on millions of views</strong><span data-i18n="com_b2d">Trending angles & breaking news shared before they go viral.</span></li>
+          <li><strong data-i18n="com_b3t">Mutual support system</strong><span data-i18n="com_b3d">Engagement, RTs and feedback from members from day one.</span></li>
+          <li><strong data-i18n="com_b4t">Daily discussion</strong><span data-i18n="com_b4d">Live chat with people growing right now — not theory, results.</span></li>
+          <li><strong data-i18n="com_b5t">Real growth network</strong><span data-i18n="com_b5d">Connections you can't buy — the people who shape the feed.</span></li>
+        </ul>
+        <a href="javascript:void(0)" onclick="openPaymentModal('Community', '$50/mo')" class="community-cta">
+          <span data-i18n="com_cta">Become a member of project X</span>
+          <span style="margin-left:0.5rem">→</span>
+        </a>
+        <div class="community-pay-note" data-i18n="com_paynote">2 payment methods · Crypto or Card · instant access</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -799,7 +879,7 @@ function toggleProof(id) {
 </div>
 
 <footer>
-  <div class="copy">© 2025 X Growth Course - defileo & Noisy</div>
+  <div class="copy">© 2026 X Growth Course - defileo & Noisy</div>
   <div class="footer-links">
     <a href="#" data-i18n="f1">Terms</a>
     <a href="#" data-i18n="f2">Refund</a>
@@ -1130,6 +1210,13 @@ window.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <script>
+function toggleCommunityPanel() {
+  var panel = document.getElementById('communityPanel');
+  var btn = document.querySelector('.com-details-btn');
+  var isOpen = panel.classList.toggle('open');
+  if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+
 function openPaymentModal(plan, price) {
   document.getElementById('paymentPlanBadge').textContent = (plan || 'Starter') + ' - ' + (price || '$299');
   document.getElementById('paymentModal').classList.add('open');
